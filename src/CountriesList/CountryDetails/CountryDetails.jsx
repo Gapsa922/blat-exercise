@@ -5,26 +5,30 @@ import { useParams, Link } from "react-router-dom";
 const CountryDetails = () => {
 
 const [country, setCountry] = useState([])
-const {name, capital, region, population, demonym, area, timezones, borders, languages, flag, independent} = country;
+const {capital, region, population, demonym, area, timezones, borders, languages, flag, independent} = country;
+/* console.log(country) */
+const { name } = useParams();
 
-const { id } = useParams();
-
-const getCountry = () => {
-  axios.get(`https://restcountries.com/v2/all/country/${id}`).then((response) => setCountry(response.data))
+const getCountry = async () => {
+  let data = await axios
+  .get(`https://restcountries.com/v2/name/${name}`)
+  setCountry(data.data[0]);
 }
+
 
 useEffect(()=> {
   getCountry();
-},[id])
+},[name])
 
   return (
     <>
-      <Link to="/countries-list">Back</Link>
+      <Link to="/countries-list"><button type="button">Back</button></Link>
       <h1>Country Details</h1>
+    {console.log(flag)}
       <img alt={name} src={flag}></img>
       <div>
         <h5>Name: {name}</h5>
-        <p>{demonym}</p>
+{/*         <p>{demonym}</p>
         <h5>Capital: {capital}</h5>
         <p>Region: {region}</p>
         <p>Population: {population}</p>
@@ -32,7 +36,7 @@ useEffect(()=> {
         <p>Timezones: {timezones}</p>
         <p>Borders: {borders}</p>
         <p>Languages: {languages}</p>
-        <p>Independent: {independent}</p>
+        <p>Independent: {independent}</p> */}
       </div>
 
     </>

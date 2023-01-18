@@ -6,13 +6,11 @@ import HomePage from "./HomePage/HomePage";
 
 function App () {
   return (
-    <div >
-      <h1>blat project</h1>
-      
+    <div >      
       <Routes>
-        <Route path="/" element={<HomePage />}></Route>
-        <Route path="/countries-list" element={<CountriesList />}></Route>
-        <Route path="/country/:id" element={<CountryDetails />}></Route>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/countries-list" element={<CountriesList />} />
+        <Route path="/name/:name" element={<CountryDetails />} />
       </Routes>
 
     </div>
