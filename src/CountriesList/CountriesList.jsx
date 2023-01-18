@@ -1,12 +1,13 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
+import CountriesCards from './CountriesCards/CountriesCards'
 
 const CountriesList = () => {
 
     const [countries, setCountries] = useState([])
 
     const getCountries = () => {
-        axios.get('https://restcountries.com/v2/all').then((response) => setCountries(response.data))
+        axios.get('https://restcountries.com/v2/all/country').then((response) => {console.log(response.data); setCountries(response.data)})
     }
 
     useEffect(() => {
@@ -17,9 +18,10 @@ const CountriesList = () => {
   return (
     <div>
         <h1>Countries List</h1>
+        {countries.map((country) => ( <CountriesCards props={country} key={country.id} />))}
 
     </div>
   )
 }
 
-export default CountriesList
+export default CountriesList;
