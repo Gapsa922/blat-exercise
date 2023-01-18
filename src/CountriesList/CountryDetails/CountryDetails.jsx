@@ -20,6 +20,8 @@ useEffect(()=> {
   getCountry();
 },[name])
 
+const [showDescription, setShowDescription] = useState(false)
+
   return (
     <>
       <Link to="/countries-list"><button type="button">Back</button></Link>
@@ -29,18 +31,31 @@ useEffect(()=> {
       <div>
         <h5>Name: {name}</h5>
         <h5>Capital: {capital}</h5>
-        <p>People: {demonym}</p>
-        <p>Region: {region}</p>
-        <p>Population: {population}</p>
-        <p>Area: {area}</p>
-{/*         <div>
-          <p>Timezones: </p>
-          {timezones.map((time) => (<p>{time} </p>))}
-        </div> */}
-{/*         <p>Borders: {borders}</p>
-        <p>Languages: {languages}</p>
-         */}
       </div>
+      <div>
+        {showDescription && 
+              <div>
+              <p>People: {demonym}</p>
+              <p>Region: {region}</p>
+              <p>Population: {population}</p>
+              <p>Area: {area}</p>
+              <div>
+                <p>Languages: </p>
+                {languages && languages.map((language, l) => (<p key={l.name}>{language.name}</p>))}
+              </div>        
+              <div>
+                <p>Timezones: </p>
+                {timezones && timezones.map((time, t) => (<p key={t.name}>{time} </p>))}
+              </div>
+              <div>
+                <p>Borders: </p>
+                {borders && borders.map((border, b) => (<p key={b.name}>{border}</p>))}
+              </div>
+            </div> }
+            <button type="button" onClick={() => setShowDescription(!showDescription)}>Click to see more</button>
+
+      </div>
+
 
     </>
   )

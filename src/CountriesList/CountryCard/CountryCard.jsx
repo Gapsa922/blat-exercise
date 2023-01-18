@@ -12,8 +12,7 @@ const CountryCard = ({country}) => {
             <h5>Capital: {country.capital}</h5>
             <div>
               <p>Languages:</p> 
-              {country.languages.map((language)=>
-              (<p>{language.name}</p>))}
+              {country.languages.map((language,l) => (<p key={l.name}>{language.name}</p>))}
             </div>
           </div>
         </Link>
