@@ -5,7 +5,7 @@ import { useParams, Link } from "react-router-dom";
 const CountryDetails = () => {
 
 const [country, setCountry] = useState([])
-const {capital, region, population, demonym, area, timezones, borders, languages, flag, independent} = country;
+const {capital, region, population, demonym, area, timezones, borders, languages, flag } = country;
 /* console.log(country) */
 const { name } = useParams();
 
@@ -24,19 +24,22 @@ useEffect(()=> {
     <>
       <Link to="/countries-list"><button type="button">Back</button></Link>
       <h1>Country Details</h1>
-    {console.log(flag)}
+    {/* {console.log(flag)} */}
       <img alt={name} src={flag}></img>
       <div>
         <h5>Name: {name}</h5>
-{/*         <p>{demonym}</p>
         <h5>Capital: {capital}</h5>
+        <p>People: {demonym}</p>
         <p>Region: {region}</p>
         <p>Population: {population}</p>
         <p>Area: {area}</p>
-        <p>Timezones: {timezones}</p>
-        <p>Borders: {borders}</p>
+{/*         <div>
+          <p>Timezones: </p>
+          {timezones.map((time) => (<p>{time} </p>))}
+        </div> */}
+{/*         <p>Borders: {borders}</p>
         <p>Languages: {languages}</p>
-        <p>Independent: {independent}</p> */}
+         */}
       </div>
 
     </>
