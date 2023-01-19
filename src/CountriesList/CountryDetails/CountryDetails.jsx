@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, Link } from "react-router-dom";
-import Banner from "../../Banner/Banner";
+/* import Banner from "../../Banner/Banner"; */
 
 const CountryDetails = () => {
 
@@ -25,7 +25,7 @@ const [showDescription, setShowDescription] = useState(false)
 
   return (
     <>
-      <Banner />
+      {/* <Banner /> */}
       <Link to="/countries-list"><button type="button">Back</button></Link>
       <h1>Country Details</h1>
     {/* {console.log(flag)} */}

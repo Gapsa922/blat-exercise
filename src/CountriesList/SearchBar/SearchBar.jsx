@@ -1,21 +1,24 @@
 import React from "react";
-/* import "./SearchBar.css" */
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
+import "../../App.css";
 
 const SearchBar = ({ handleChange, searchValue }) => {
   return (
-    <div className="searchBar">
-      <h2>Search</h2>
+    <>
       <br/>
-      <input
-        className="searchBar-input"
-        type="search"
-        name="search"
-        value={searchValue}
-        placeholder="Search your Country"
-        onChange={handleChange}
-      />
-    </div>
+      <InputGroup className="mb-3" size="lg">
+        <Form.Control
+            aria-label="Recipient's username"
+            aria-describedby="basic-addon2"
+            onChange={handleChange}
+            placeholder="Search your Country"
+            value={searchValue}
+        />
+        </InputGroup>
+    </>
   );
 };
 
 export default SearchBar;
+

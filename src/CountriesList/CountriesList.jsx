@@ -3,6 +3,7 @@ import axios from 'axios'
 import CountryCard from './CountryCard/CountryCard'
 import "../App.css"
 import SearchBar from "./SearchBar/SearchBar"
+import Slider from '../Slider/Slider'
 
 const CountriesList = () => {
 
@@ -39,15 +40,20 @@ console.log(searchValue); */
     
 
   return (
-    <>
+    <div className="container">
       <h1>Countries List</h1>
-      <div>
-        <SearchBar handleChange={handleChange} searchValue={searchValue} />
+      <SearchBar handleChange={handleChange} searchValue={searchValue} />
+      <div className="container-slider-container">
+        <Slider />
+        <div className="">
+          <div>
+          </div>
+          <div className="container-countries">
+            {countries.filter(country => country.name.toLowerCase().startsWith(searchValue.toLowerCase())).map(country => <CountryCard className="card" country={country} key={country.name}/> )}
+          </div>        
+        </div>
       </div>
-      <div className="container-countries">
-        {countries.filter(country => country.name.toLowerCase().startsWith(searchValue.toLowerCase())).map(country => <CountryCard className="card" country={country} key={country.name}/> )}
-      </div>        
-    </>
+    </div>
   )
 }
 

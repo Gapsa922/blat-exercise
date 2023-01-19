@@ -12,14 +12,6 @@
   
   /*  CountryCard */
 
-  .container-countries{
-    display: grid;
-    grid-template-columns: auto auto auto auto auto auto;
-    padding: 10%;
-  }
-
-
-
   .card{
     margin-bottom: 10%;
   }
@@ -27,3 +19,44 @@
   .card:hover{
     box-shadow: 0 0 2px 1px rgba(0, 140, 186, 3);
   }
+
+    /*  SearchBar */
+
+    .input-group-lg > .form-control{
+      margin-right: 14%;
+      margin-left: 14%;
+    }
+
+  /*  ContriesList */
+
+    .container{
+      margin-right: 50%;
+    }
+
+    .container-slider-container{
+      display: flex;
+    }
+
+    .container-countries{
+      display: grid;
+      grid-template-columns: auto auto auto auto auto auto auto auto;
+      padding: 10% 20% 10% 2%;
+    }
+
+     /*  Slider */
+
+     .scroll-bg{
+      width:30%;
+      margin:10% auto;
+     }
+
+     .scroll-div{
+      width: 200px;
+      height:300px;
+      overflow:hidden;
+      overflow-y: scroll;
+     }
+
+     .scroll-obj{
+      
+     }
