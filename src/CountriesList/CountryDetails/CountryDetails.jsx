@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, Link } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
+import "../../App.css"
 /* import Banner from "../../Banner/Banner"; */
 
 const CountryDetails = () => {
@@ -26,35 +28,30 @@ const [showDescription, setShowDescription] = useState(false)
   return (
     <>
       {/* <Banner /> */}
-      <Link to="/countries-list"><button type="button">Back</button></Link>
       <h1>Country Details</h1>
     {/* {console.log(flag)} */}
       <img alt={name} src={flag}></img>
       <div>
-        <h5>Name: {name}</h5>
-        <h5>Capital: {capital}</h5>
+        <p>Name: <span>{name}</span></p>
+        <p>Capital: <span>{capital}</span></p>
       </div>
       <div>
         {showDescription && 
-          <div>
-              <p>People: {demonym}</p>
-              <p>Region: {region}</p>
-              <p>Population: {population}</p>
-              <p>Area: {area}</p>
-              <div>
-                <p>Languages: </p>
-                {languages && languages.map((language) => (<p>{language.name}</p>))}
-              </div>        
-              <div>
-                <p>Timezones: </p>
-                {timezones && timezones.map((time) => (<p>{time} </p>))}
-              </div>
-              <div>
-                <p>Borders: </p>
-                {borders && borders.map((border) => (<p>{border}</p>))}
-              </div>
+          <div className="more-info">
+              <p>People: <span>{demonym}</span></p>
+              <p>Region: <span>{region}</span></p>
+              <p>Population: <span>{population}</span></p>
+              <p>Area: <span>{area} m²</span></p>
+              <p>Languages: {languages && languages.map((language) => (<span>{language.name}</span>))}</p>     
+              <p>Timezones: {timezones && timezones.map((time) => (<span>{time} </span>))}</p>
+              <p>Borders: {borders && borders.map((border) => (<span>{border}</span>))}</p>
             </div> }
-            <button type="button" onClick={() => setShowDescription(!showDescription)}>{!showDescription ? 'Click to see more' : 'Click to see less'}</button>
+            <div className="countryDetails-buttons">
+              <Link to="/countries-list">
+                <Button type="button" variant="secondary">Back</Button>
+              </Link>
+              <Button variant="secondary" type="button" onClick={() => setShowDescription(!showDescription)}>{!showDescription ? 'Click to see more' : 'Click to see less'}</Button>{' '}
+            </div>
       </div>
     </>
   )

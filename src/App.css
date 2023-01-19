@@ -1,5 +1,54 @@
 * {
     text-align: center;
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: Arial;
+    font-size: 17px;
+  }
+
+    /*  HomePage */
+  .video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    z-index: -1;
+  }
+
+  .content-text {
+    position: fixed;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.123);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+    text-align: start!important;
+  }
+
+  .text{
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: start!important;
+  }
+
+  .button{
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: #212529;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 5%;
+  }
+  
+.button:hover {
+    background: #ddd;
+    color: #212529;
   }
 
   /*  MainNavBar */
@@ -72,4 +121,27 @@
 
      .scroll-obj{
       
+     }
+
+     
+     /*  Country Details */
+
+     .countryDetails-buttons{
+      display: flex;
+      justify-content: center;
+     }
+
+     .more-info{
+      
+     }
+
+     p{
+      font-size:large;
+      font-weight: bold;
+     }
+
+     span{
+      font-size: medium;
+      color: gray;
+
      }
