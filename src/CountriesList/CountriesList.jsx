@@ -19,8 +19,7 @@ const CountriesList = () => {
 
   return (
     <div>
-        <h1>Countries List</h1>
-        
+        <h1>Countries List</h1>        
         {countries.map((country) => (<CountryCard country={country} key={country.id}/> ) )}
 
     </div>
@@ -28,3 +27,4 @@ const CountriesList = () => {
 }
 
 export default CountriesList;
+

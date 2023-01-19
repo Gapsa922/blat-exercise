@@ -43,18 +43,18 @@ const [showDescription, setShowDescription] = useState(false)
               <p>Area: {area}</p>
               <div>
                 <p>Languages: </p>
-                {languages && languages.map((language, l) => (<p key={l.name}>{language.name}</p>))}
+                {languages && languages.map((language) => (<p>{language.name}</p>))}
               </div>        
               <div>
                 <p>Timezones: </p>
-                {timezones && timezones.map((time, t) => (<p key={t.name}>{time} </p>))}
+                {timezones && timezones.map((time) => (<p>{time} </p>))}
               </div>
               <div>
                 <p>Borders: </p>
-                {borders && borders.map((border, b) => (<p key={b.name}>{border}</p>))}
+                {borders && borders.map((border) => (<p>{border}</p>))}
               </div>
             </div> }
-            <button type="button" onClick={() => setShowDescription(!showDescription)}>{!showDescription ? 'Click to see more' : 'Click to hide'}</button>
+            <button type="button" onClick={() => setShowDescription(!showDescription)}>{!showDescription ? 'Click to see more' : 'Click to see less'}</button>
       </div>
     </>
   )
