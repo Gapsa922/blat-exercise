@@ -14,6 +14,7 @@
 
   .card{
     margin-bottom: 10%;
+    margin-right: 20px;
   }
 
   .card:hover{
@@ -29,18 +30,27 @@
 
   /*  ContriesList */
 
-    .container{
-      margin-right: 50%;
+  .container{
+    margin:0;
+    left:0;
+  }
+
+    .container-slider{
+      margin:0;
+      
     }
 
     .container-slider-container{
       display: flex;
+      justify-content: space-between;
+      
     }
 
     .container-countries{
       display: grid;
       grid-template-columns: auto auto auto auto auto auto auto auto;
-      padding: 10% 20% 10% 2%;
+      margin-top: 10%;
+
     }
 
      /*  Slider */
@@ -48,6 +58,7 @@
      .scroll-bg{
       width:30%;
       margin:10% auto;
+      position: absolute;
      }
 
      .scroll-div{
@@ -55,6 +66,8 @@
       height:300px;
       overflow:hidden;
       overflow-y: scroll;
+      border-style: ridge;
+      
      }
 
      .scroll-obj{

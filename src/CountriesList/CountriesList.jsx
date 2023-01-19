@@ -44,16 +44,14 @@ console.log(searchValue); */
       <h1>Countries List</h1>
       <SearchBar handleChange={handleChange} searchValue={searchValue} />
       <div className="container-slider-container">
-        <Slider />
-        <div className="">
-          <div>
-          </div>
+        <div className="container-slider">
+          <Slider />
+        </div>
           <div className="container-countries">
             {countries.filter(country => country.name.toLowerCase().startsWith(searchValue.toLowerCase())).map(country => <CountryCard className="card" country={country} key={country.name}/> )}
           </div>        
         </div>
       </div>
-    </div>
   )
 }
 
