@@ -1,3 +1,29 @@
 * {
     text-align: center;
   }
+
+  /*  MainNavBar */
+
+  .logo{
+    font-size: 5rem!important;
+    display: flex;
+    align-items: center;
+}
+  
+  /*  CountryCard */
+
+  .container-countries{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    padding: 10%;
+  }
+
+
+
+  .card{
+    margin-bottom: 10%;
+  }
+
+  .card:hover{
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 3);
+  }

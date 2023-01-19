@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 const CountryCard = ({country}) => {
-  console.log(country)
+ // console.log(country)
   return (
     <>
       <Link to={`/name/${country.name}`}></Link>
@@ -27,20 +27,6 @@ const CountryCard = ({country}) => {
         </Card.Body>
         </Card>
     </>
-    
-/*         <Link to={`/name/${country.name}`}>
-          <img alt={country.name} className="" src={country.flag}></img>
-          <div>
-            <h5></h5>
-            <h5>Capital: {country.capital}</h5>
-            <div>
-              <p>Languages:</p> 
-              {country.languages.map((language,l) => (<p key={l.name}>{language.name}</p>))}
-            </div>
-          </div>
-        </Link> */
-
-
   )
 }
 
