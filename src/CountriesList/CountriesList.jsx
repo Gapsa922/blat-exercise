@@ -17,13 +17,6 @@ const CountriesList = () => {
         .then((response) => setCountries(response.data))
     }
 
-/*     const searchCountry = () => {
-      axios
-        .get(`https://restcountries.com/v2/name/${searchValue}`)
-        .then((response) =>setCountries([response.data[0]]))
-    }
-console.log(searchValue); */
-
     const handleChange = (event) => {
       setSearchValue(event.target.value);
     };
@@ -31,13 +24,6 @@ console.log(searchValue); */
     useEffect(() => {
         getCountries();
       }, []);
-      
-      
-
-     /*  useEffect(() => {
-        searchCountry();
-      }, [searchValue]); */
-    
 
   return (
     <div className="container">

@@ -3,13 +3,11 @@ import axios from "axios";
 import { useParams, Link } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import "../../App.css"
-/* import Banner from "../../Banner/Banner"; */
 
 const CountryDetails = () => {
 
 const [country, setCountry] = useState([])
 const {capital, region, population, demonym, area, timezones, borders, languages, flag } = country;
-/* console.log(country) */
 const { name } = useParams();
 
 const getCountry = async () => {
@@ -27,9 +25,7 @@ const [showDescription, setShowDescription] = useState(false)
 
   return (
     <>
-      {/* <Banner /> */}
       <h1>Country Details</h1>
-    {/* {console.log(flag)} */}
       <img alt={name} src={flag}></img>
       <div>
         <p>Name: <span>{name}</span></p>
